@@ -171,7 +171,7 @@
 }
 .site-footer .social-icons
 {
-  text-align:right
+  text-align:left
 }
 .site-footer .social-icons a
 {
@@ -202,14 +202,15 @@
   }
   .site-footer .copyright-text,.site-footer .social-icons
   {
-    text-align:center
+    text-align:right
   }
 }
 .social-icons
 {
   padding-left:0;
   margin-bottom:0;
-  list-style:none
+  list-style:none;
+  align-items: center;
 }
 .social-icons li
 {
