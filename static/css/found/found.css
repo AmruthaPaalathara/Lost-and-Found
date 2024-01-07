@@ -1,7 +1,7 @@
 /* Style the navigation bar */
 .navbar1 {
     width: 100%;
-    background-color: #555;
+    background-color:#26272b;
     overflow: auto;
     justify-content: end;
     display: flex;
