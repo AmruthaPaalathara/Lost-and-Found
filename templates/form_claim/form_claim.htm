@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>lostandfound</title>
+    <link rel="stylesheet" href="/static/css/form_claim/form_claim.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="navbar1" align="left">
+
+        <a href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a class="active" href="#"><i class="fa fa-fw fa-search"></i> Found</a>
+        <a href="#"><i class="fa fa-fw fa-envelope"></i> Lost</a>
+        <a href="#"><i class="fa fa-fw fa-user-plus"></i> SignUp</a>
+        <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
+    </div>
+
+    <main>
+        <div id="app">
+            <div>
+              <form-wizard title='Pedalsure Claim form' @on-complete="onComplete" :start-index="0" color="#e67e22">
+                <tab-content title="Your details" icon="ti-user" class="tab-content">
+                  <h3>Your details</h3>
+                  <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon3">Full name</span>
+                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                  </div>
+                  <br>
+                  <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon3">Home address</span>
+                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                  </div>
+                  
+                  <br>
+                  <div data-role="fieldcontain" data-theme="c" id="quests'+id+'">
+                      <fieldset data-role="controlgroup" data-type="horizontal">
+                      <label>Have you made any cycle related claims, whitin the last three years?</label>
+                      <br>
+                      <input type="radio" name="radio1" id="+QuestionID+_1" value="1" />
+                      <label for="'+QuestionID+'_1">Yes</label>
+          
+                      <input type="radio" name="radio1" id="+QuestionID+_0" value="0" />
+                      <label for="'+QuestionID+'_0">No</label>
+                      </fieldset>
+                      <textarea cols="30" rows="3" name="textarea" style="width:80%; display:none;"     id="comment_+QuestionID+"></textarea>
+                      <br />
+                 </div>
+                  <div data-role="fieldcontain" data-theme="c" id="quests'+id+'">
+                      <fieldset data-role="controlgroup" data-type="horizontal">
+                      <label>Have you ever been convicted of any offence invoving dishonesty, fraud or have prosecutions pending?</label>
+                      <br>
+                      <input type="radio" name="radio2" id="+QuestionID+_1" value="1" />
+                      <label for="'+QuestionID+'_1">Yes</label>
+          
+                      <input type="radio" name="radio2" id="+QuestionID+_0" value="0" />
+                      <label for="'+QuestionID+'_0">No</label>
+                      </fieldset>
+                      <textarea cols="30" rows="3" name="textarea2" style="width:80%; display:none;"     id="comment_+QuestionID+"></textarea>
+                      <br />
+                 </div>
+                  
+          <!--         <img src="https://image.ibb.co/eq2Xvb/IMG_20170616_093005.jpg" /> -->
+                </tab-content>
+                <tab-content title="Incident detils" icon="ti-alert" class="tab-content">
+                  <h3>Incident details</h3>
+                  <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon3">Date of incident</span>
+                    <input type="date" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                  </div>
+                  <br>
+                  <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon3">Time of incident</span>
+                    <input type="time" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                  </div>
+                  <br>
+                  
+                </tab-content>
+                <tab-content title="Policy info" icon="ti-info" class="tab-content">
+                  <h3>Policy information</h3>
+                  <div class="form-check">
+                    <label>How was the incident reported? </label>
+                    <br>
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" value="">
+                    By phone
+                  </label>
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" value="">
+                    Email
+                  </label>
+                </div>
+                  <br>
+                  <div data-role="fieldcontain" data-theme="c" id="quests'+id+'">
+                      <fieldset data-role="controlgroup" data-type="horizontal">
+                      <label>Did the police attend the scene of the crime?</label>
+                      <br>
+                      <input type="radio" name="radio3" id="+QuestionID+_1" value="1" />
+                      <label for="'+QuestionID+'_1">Yes</label>
+          
+                      <input type="radio" name="radio3" id="+QuestionID+_0" value="0" />
+                      <label for="'+QuestionID+'_0">No</label>
+                      </fieldset>
+                 </div>
+                  <br>
+          
+                </tab-content>
+                <tab-content title="Last step" icon="ti-check" class="tab-content">
+                  <h3>Additional information</h3>
+                  
+               <textarea cols="12" rows="12" name="textarea6" id="comment_+QuestionID+"></textarea>
+                      <br />
+                </tab-content>
+              </form-wizard>
+            </div>
+          </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="/static/js/form_claim/form_claim.js"></script>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h6>About</h6>
+                    <p class="text-justify">Christ University's Lost and Found service reflects our commitment to
+                        fostering a supportive and responsible community environment. We believe that by helping
+                        individuals recover their lost items, we contribute to a campus culture that values personal
+                        belongings and encourages mutual assistance among our diverse community members.</p>
+                </div>
+
+
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Contribute</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <h6>Find us On :</h6>
+                    <ul class="social-icons">
+                        <li><a class="facebook" href="https://www.facebook.com/lavasa.christuniversity/"><i
+                                    class="fa fa-facebook"></i></a></li>
+                        <li><a class="twitter" href="https://twitter.com/christlavasa?lang=en"><i
+                                    class="fa fa-twitter"></i></a></li>
+                        <li><a class="dribbble" href="https://www.instagram.com/christ_university_lavasa/?hl=en"><i
+                                    class="fa fa-instagram"></i></a></li>
+                        <li><a class="linkedin"
+                                href="https://www.linkedin.com/company/christ-institute-of-management-cim-lavasa/?originalSubdomain=in"><i
+                                    class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by
+                        <a href="https://lavasa.christuniversity.in/">ChristUniversity</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
