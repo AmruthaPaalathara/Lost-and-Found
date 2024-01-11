@@ -6,3 +6,6 @@ from django.shortcuts import render
 
 def found(request):
     return render(request,'found/found.html')
+
+def login(request):
+    return render(request,"login/login.html")

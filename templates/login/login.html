@@ -1,3 +1,6 @@
+{% extends "base.html" %}
+[% load static %]
+{% block content %}
 <!doctype html>
 <html lang="en">
 
@@ -57,58 +60,10 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-6">
-                    <h6>About</h6>
-                    <p class="text-justify">Christ University's Lost and Found service reflects our commitment to
-                        fostering a supportive and responsible community environment. We believe that by helping
-                        individuals recover their lost items, we contribute to a campus culture that values personal
-                        belongings and encourages mutual assistance among our diverse community members.</p>
-                </div>
-
-
-
-                <div class="col-xs-6 col-md-3">
-                    <h6>Quick Links</h6>
-                    <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Contribute</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Sitemap</a></li>
-                    </ul>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <h6>Find us On :</h6>
-                    <ul class="social-icons">
-                        <li><a class="facebook" href="https://www.facebook.com/lavasa.christuniversity/"><i
-                                    class="fa fa-facebook"></i></a></li>
-                        <li><a class="twitter" href="https://twitter.com/christlavasa?lang=en"><i
-                                    class="fa fa-twitter"></i></a></li>
-                        <li><a class="dribbble" href="https://www.instagram.com/christ_university_lavasa/?hl=en"><i
-                                    class="fa fa-instagram"></i></a></li>
-                        <li><a class="linkedin"
-                                href="https://www.linkedin.com/company/christ-institute-of-management-cim-lavasa/?originalSubdomain=in"><i
-                                    class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <hr>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by
-                        <a href="https://lavasa.christuniversity.in/">ChristUniversity</a>.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    
 
 </body>
 
 
 </html>
+{% endblock content %}
