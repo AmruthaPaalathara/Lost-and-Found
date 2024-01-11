@@ -6,3 +6,5 @@ from django.shortcuts import render
 
 def found(request):
     return render(request,'found/found.html')
+def form(request):
+    return render(request,'found/claimant-form.html')
