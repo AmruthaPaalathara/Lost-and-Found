@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'claimant',
     'item_found',
     'item_lost',
-    "LostandFoundAdmin",
+    "LostandfoundAdmin",
 ]
 
 MIDDLEWARE = [
