@@ -22,3 +22,7 @@ lostandfound/__pycache__/
 
 LostandfoundAdmin/__pycache__/
 LostandfoundAdmin/migrations/__pycache__/
+
+template/found/claimant-form.html
+
+template/claimant/claimant-home.html
