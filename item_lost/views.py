@@ -2,7 +2,10 @@ from django.shortcuts import render
 
 # Create your views here.
 def item_lost(request):
-    return render(request,'claimant/claimant-home.html')
+    return render(request,'')
+
+def index(request):
+    return render(request, 'homepage.html')
 
 
 def login_form(request):

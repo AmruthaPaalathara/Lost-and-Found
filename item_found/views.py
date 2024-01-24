@@ -8,10 +8,10 @@ def found(request):
     return render(request,'found/found.html')
 
 def form(request):
-    return render(request,'found/claimant-form.html')
+    return render(request,'found/form_claim.html')
 
 def login(request):
-    return render(request,"login/login.html")
+    return render(request,"Login/login.html")
 
 def login_form(request):
     if request.method == "POST":

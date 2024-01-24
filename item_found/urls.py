@@ -1,10 +1,11 @@
 from django.urls import path
-from . import views
+from  item_found import views
 #from .views import found
 
 urlpatterns=[
-    #path('found/', found, name='found'),
-    path('form/',views.form,name='form'),
-    path('found/',views.found,name='found'),
+    path('form',views.form,name='form'),
+    path('',views.found,name='found'),
+    path('login',views.login,name="login"),
+    path('log_form',views.login_form,name="login_form"),
 
 ]

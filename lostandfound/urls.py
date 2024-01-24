@@ -23,10 +23,11 @@ from item_found.views import found,login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('',include('claimant.urls')),
+    path('',include('item_lost.urls')),
     path('found/',include('item_found.urls')),
     path("login/",login,name="login"),
     path("lost/",include("item_lost.urls")),
+    path('cadmin/',include('LostandfoundAdmin.urls'))
 ]
 urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 urlpatterns+=static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
