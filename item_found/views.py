@@ -13,3 +13,10 @@ def form(request):
 def login(request):
     return render(request,"login/login.html")
 
+def login_form(request):
+    if request.method == "POST":
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        
+
+    return render(request,'login/login.html')
