@@ -27,7 +27,7 @@ urlpatterns = [
     path('found/',include('item_found.urls')),
     path("login/",login,name="login"),
     path("lost/",include("item_lost.urls")),
-    path('cadmin/',include('LostandfoundAdmin.urls'))
+    path('cadmin/',include('LostandfoundAdmin.urls')),
 ]
 urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 urlpatterns+=static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
