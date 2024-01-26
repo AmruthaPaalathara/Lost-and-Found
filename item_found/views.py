@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate , login , logout
+from . models import found
 
 # Create your views here.
 
@@ -20,7 +21,9 @@ def login_form(request):
 
         user = authenticate(request, username=username, password=password)
     
-        
+        user.save()  
     
     return render(request,'Login/login.html')
 
+#def edit(request):
+    #return render(request)
