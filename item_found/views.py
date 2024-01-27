@@ -4,19 +4,19 @@ from django.shortcuts import render
 
 
 
-def found(request):
-    return render(request,'found/found.html')
-
-def form(request):
-    return render(request,'found/form_claim.html')
-
-def login(request):
-    return render(request,"Login/login.html")
-
-def login_form(request):
-    if request.method == "POST":
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+# def login_form(request):
+#     if request.method == "POST":
+#         username = request.POST.get('username')
+#         password = request.POST.get('password')
         
 
-    return render(request,'login/login.html')
+#     return render(request,'login/login.html')
+
+def foundForm(request):
+    return render(request,'main/foundForm.html')
+
+def login(request):
+    return render(request,'main/login.html')
+
+def items(request):
+    return render(request,'main/items.html')
