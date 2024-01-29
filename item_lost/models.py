@@ -12,3 +12,12 @@ class lost(models.Model):
     item_category = models.CharField(max_length=50)
     lost_date = models.DateField(null=True,blank=True)
     lost_place = models.TextField()
+
+class Status(models.Model):
+    STATUS = (
+    ('Pending','Pending'),
+    ('Completed','Completed'),
+)
+    
+    register_number=models.ForeignKey(lost,null=True,on_delete=models.CASCADE)
+    status=models.CharField(max_length=10,null=True,choices=STATUS)
