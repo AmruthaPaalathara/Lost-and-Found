@@ -11,7 +11,7 @@ class Found(models.Model):
     item_name = models.CharField(max_length=50)
     item_category = models.CharField(max_length=50)
     found_date = models.DateField(null=True, blank=True)
-    found_place = models.TextField()
+    location = models.TextField()
 
     def __str__(self):
         return str(self.register_number)

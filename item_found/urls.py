@@ -13,5 +13,6 @@ urlpatterns=[
     path('item',views.items,name='items'),
     path('login',views.login,name='login'),
     path('register',views.register,name='register'),
+    #path('products',views.products,name='product'),
 
 ]
