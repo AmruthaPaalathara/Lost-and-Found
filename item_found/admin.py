@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . models import found
+from .models import Found
 
 # Register your models here.
-admin.site.register(found)
+admin.site.register(Found)

@@ -8,7 +8,7 @@ def item_lost(request):
     return render(request,'')
 
 def home(request):
-    return render(request, 'homepage.html')
+    return render(request, 'main/index.html')
 
 def login_form(request):
     if request.method == "POST":

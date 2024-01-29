@@ -13,6 +13,9 @@ class lost(models.Model):
     lost_date = models.DateField(null=True,blank=True)
     lost_place = models.TextField()
 
+def __str__(self):
+    return str(self.register_number)
+
 class Status(models.Model):
     STATUS = (
     ('Pending','Pending'),

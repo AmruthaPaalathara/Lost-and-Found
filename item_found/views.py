@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate , login , logout
-from . models import found
+from item_found.models import Found
 
 # Create your views here.
 

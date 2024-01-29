@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/foundForm.css' %}">
+
+    <section>
+        <div class="container" id="main-container">
+            <div class="image">
+                <img src="{% static 'images/register.jpg' %}" alt="">
+            </div>
+
+            <div class="container p-5 mt-5" id="form-container">
+
+                <h1 class="text-center">Resgister Here <i class="far fa-smile-beam"></i></h1>
+                <form class="mt-4">
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Full
+                                Name*</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="John Cena" aria-label="Default"
+                            aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Email*</span>
+                        </div>
+                        <input type="email" class="form-control" placeholder="cenajohn@gmail.com" aria-label="Default"
+                            aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Phone
+                                No.</span>
+                        </div>
+                        <input type="text" name="phone[1][number]" class="form-control" placeholder="+91 8888 8888" />
+                    </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Sex*</span>
+                        </div>
+                        <select id="inputState" class="form-control">
+                            <option>Choose...</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Year*</span>
+                        </div>
+                        <select id="inputState" class="form-control">
+                            <option selected>Choose...</option>
+                            <option value="first">&#8544;</option>
+                            <option value="second">&#8545;</option>
+                            <option value="third">&#8546;</option>
+                            <option value="fourth">&#8547;</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Branch*</span>
+                        </div>
+                        <select id="inputState" class="form-control">
+                            <option selected>Choose...</option>
+                            <option value="cse">Computer Science Engineering</option>
+                            <option value="it">Information Technology</option>
+                            <option value="ec">Electronics And Communication Engineering</option>
+                            <option value="ee">Electrical Engineering</option>
+                            <option value="au">Automobile Engineering</option>
+                            <option value="me">Mechanical Engineering</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Password*</span>
+                        </div>
+
+                        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+
+                    </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Confirm
+                                Password*</span>
+                        </div>
+
+                        <input type="password" class="form-control" id="inputPassword4" placeholder="Confirm Password">
+
+                    </div>
+                    <div class="form-check mb-3">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1"><a href="#">Agree terms and
+                                conditions</a></label>
+                    </div>
+                    <div class="submit-button text-center">
+                        <button type="submit" class="btn btn-outline-primary ">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+{% endblock content %}

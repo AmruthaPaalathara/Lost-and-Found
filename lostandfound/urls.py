@@ -19,7 +19,7 @@ from django.urls import path,include
 from django.conf.urls.static import static
 from lostandfound import settings
 
-from item_found.views import found,login
+from item_found.views import login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
