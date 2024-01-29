@@ -1,17 +1,33 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate , login , logout
-from item_found.models import Found
+from item_found.models import *
 
 # Create your views here.
 
 
 
-def found(request):
-    return render(request,'found/found.html')
+
+def aboutus(request):
+    return render(request,'main/aboutus.html')
+
+def contactus(request):
+    return render(request,'main/contactus.html')
 
 def form(request):
-    return render(request,'found/claim_form.html')
+    return render(request,'main/foundForm.html')
+
+def index(request):
+    return render(request,'main/index.html')
+
+def items(request):
+    return render(request,'main/items.html')
+
+def login(request):
+    return render(request,'main/login.html')
+
+def register(request):
+    return render(request,'main/register.html')
 
 
 def login_form(request):

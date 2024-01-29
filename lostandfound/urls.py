@@ -19,15 +19,16 @@ from django.urls import path,include
 from django.conf.urls.static import static
 from lostandfound import settings
 
-from item_found.views import login
+from item_found.views import *
+from item_lost.views import *
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('item_lost.urls')),
+    path('',include('item_found.urls')),
     path('found/',include('item_found.urls')),
     path("login/",login,name="login"),
     path("lost/",include("item_lost.urls")),
     path('cadmin/',include('LostandfoundAdmin.urls')),
 ]
 urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
-urlpatterns+=static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)

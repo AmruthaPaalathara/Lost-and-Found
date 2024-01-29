@@ -4,11 +4,8 @@ from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 
-def item_lost(request):
-    return render(request,'')
-
-def home(request):
-    return render(request, 'main/index.html')
+def lostForm(request):
+    return render(request,'main/lostForm.html')
 
 def login_form(request):
     if request.method == "POST":
