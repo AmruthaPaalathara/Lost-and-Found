@@ -5,6 +5,10 @@ from django.contrib.auth import authenticate, login, logout
 # Create your views here.
 
 def lostForm(request):
+    if request.method =='POST':
+        register=request.POST['register']
+        # name=
+
     return render(request,'main/lostForm.html')
 
 def login_form(request):

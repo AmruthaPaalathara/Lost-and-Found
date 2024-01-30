@@ -59,7 +59,7 @@ def products(request):
     # {'student':student,'product':product}
     return render(request,'found/products.html')
 
-def login_form(request):
+def login(request):
     if request.method == "POST":
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -68,7 +68,5 @@ def login_form(request):
     
         user.save()  
     
-    return render(request,'Login/login.html')
+    return render(request,'main/login.html')
 
-#def edit(request):
-    #return render(request)

@@ -13,7 +13,8 @@
 
                 <h1 class="text-center">Lost Something?</h1>
                 <h3 class="text-center">Help us to help you out!</h3>
-                <form class="mt-4">
+                <form class="mt-4" method="POST">
+                    {% csrf_token %}
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Name*</span>

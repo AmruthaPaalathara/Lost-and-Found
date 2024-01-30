@@ -30,5 +30,6 @@ urlpatterns = [
     path("login/",login,name="login"),
     path("lost/",include("item_lost.urls")),
     path('padmin/',include('LostandfoundAdmin.urls')),
+    path('padmin/',include('django.contrib.auth.urls')),
 ]
 urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

@@ -12,6 +12,7 @@ class Found(models.Model):
     item_category = models.CharField(max_length=50)
     found_date = models.DateField(null=True, blank=True)
     location = models.TextField()
+    image = models.ImageField()
 
     def __str__(self):
         return str(self.register_number)
