@@ -1,7 +1,9 @@
+
 from django.urls import path
-from LostandfoundAdmin import views
+from .views import *
 
-
-urlpatterns=[
-    path('login',views.login_form,name='adminlogin')
+urlpatterns = [
+    #path('login',login_form,name='padminlogin'),
+    path('claim',claimant,name='claim'),
+    path('',login_user,name='login')
 ]

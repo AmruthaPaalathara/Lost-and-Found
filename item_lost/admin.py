@@ -3,3 +3,4 @@ from . models import lost
 # Register your models here.
 
 admin.site.register(lost)
+

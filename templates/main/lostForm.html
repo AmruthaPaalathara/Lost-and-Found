@@ -13,56 +13,80 @@
 
                 <h1 class="text-center">Lost Something?</h1>
                 <h3 class="text-center">Help us to help you out!</h3>
+                <!--inside form id and class inputGroup-sizing-default is replaced with lostform-->
                 <form class="mt-4" method="POST">
                     {% csrf_token %}
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
-                            <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Name*</span>
+                            <span class="input-group-text bg-primary" id="lostform" required>Register Number</span>
                         </div>
-                        <input type="text" class="form-control" placeholder="John Cena" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <input type="number" class="form-control" aria-label="Default" aria-describedby="lostform">
                     </div>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
-                            <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Email*</span>
+                            <span class="input-group-text bg-primary" id="lostform" required>Name</span>
                         </div>
-                        <input type="email" class="form-control" placeholder="cenajohn@gmail.com" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <input type="text" class="form-control" aria-label="Default" aria-describedby="lostform">
+                    </div>
+                    <div class="input-group mb-4 ">
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text bg-primary " id="lostform " required>Department</span>
+                        </div>
+                        <input type="text " class="form-control " name='dept' aria-label="Default " aria-describedby="lostform ">
                     </div>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
-                            <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Item*</span>
+                            <span class="input-group-text bg-primary" id="lostform" required>Email</span>
                         </div>
-                        <input type="text" class="form-control" placeholder="Item Name" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-                    </div>
-
-                    <div class="input-group mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Location</span>
-                        </div>
-                        <input type="text" placeholder="If you remember" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <input type="email" class="form-control" aria-label="Default" aria-describedby="lostform">
                     </div>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
-                            <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Date*</span>
+                            <span class="input-group-text bg-primary" id="lostform" required>Item</span>
                         </div>
-                        <input type="date" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <input type="text" class="form-control" placeholder="Item Name" aria-label="Default" aria-describedby="lostform">
                     </div>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
-                            <span class="input-group-text bg-primary">Item Description*</span>
+                            <span class="input-group-text bg-primary" id="lostform" required>Category</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Item Name" aria-label="Default" aria-describedby="lostform">
+                    </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-primary" id="lostform">Location</span>
+                        </div>
+                        <input type="text" placeholder="If you remember" class="form-control" aria-label="Default" aria-describedby="lostform">
+                    </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-primary" id="lostform" required>Date</span>
+                        </div>
+                        <input type="date" class="form-control" aria-label="Default" aria-describedby="lostform">
+                    </div>
+                    <div class="input-group mb-4 ">
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text bg-primary " id="lostform " required>Time</span>
+                        </div>
+                        <input type="time " class="form-control " name='time' aria-label="Default " aria-describedby="lostform ">
+                    </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-primary" required>Item Description</span>
                         </div>
                         <textarea class="form-control" placeholder="It is black in color..." aria-label="With textarea"></textarea>
                     </div>
-                    <div class="input-group mb-5">
+                    <!-- <div class="input-group mb-5">
                         <div class="input-group-prepend">
-                            <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Reward</span>
+                            <span class="input-group-text bg-primary" id="lostform">Reward</span>
                         </div>
-                        <input type="text" placeholder="Not Necessary" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-                    </div>
+                        <input type="text" placeholder="Not Necessary" class="form-control" aria-label="Default" aria-describedby="lostform">
+                    </div> -->
 
-                    <div class="form-check mb-5">
+                    <!-- <div class="form-check mb-5">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Agree terms and conditions</label>
-                    </div>
+                    </div> -->
                     <div class="submit-button text-center">
                         <button type="submit" class="btn btn-outline-primary ">Submit</button>
                     </div>

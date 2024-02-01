@@ -13,59 +13,59 @@
             <div class="container p-5 mt-5" id="form-container">
 
                 <h1 class="text-center">Found <i class="far fa-smile-beam"></i></h1>
-
-                <form class="mt-4" method="POST" enctype="multipart/form-data">
+                <!--in the form id  and aria-describedby was "inputGroup-sizing-default" that is changed to "foundform" -->
+                <form class="mt-4" method="POST" enctype="multipart/form-data" action="">
                     {% csrf_token %}
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
-                            <span class="input-group-text bg-primary" id="inputGroup-sizing-default" required>Name</span>
+                            <span class="input-group-text bg-primary" id="foundform" required>Name</span>
                         </div>
-                        <input type="text" class="form-control" name='name' aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <input type="text" class="form-control" name='name' aria-label="Default" aria-describedby="foundform">
                     </div>
 
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
-                            <span class="input-group-text bg-primary" id="inputGroup-sizing-default" required>Register Number</span>
+                            <span class="input-group-text bg-primary" id="foundform" required>Register Number</span>
                         </div>
-                        <input type="number" class="form-control" name='register' aria-label="Default " aria-describedby="inputGroup-sizing-default ">
+                        <input type="number" class="form-control" name='register' aria-label="Default " aria-describedby="foundform ">
                     </div>
                     <div class="input-group mb-4 ">
                         <div class="input-group-prepend ">
-                            <span class="input-group-text bg-primary " id="inputGroup-sizing-default " required>Department</span>
+                            <span class="input-group-text bg-primary " id="foundform " required>Department</span>
                         </div>
-                        <input type="text " class="form-control " name='dept' aria-label="Default " aria-describedby="inputGroup-sizing-default ">
+                        <input type="text " class="form-control " name='dept' aria-label="Default " aria-describedby="foundform ">
                     </div>
                     <div class="input-group mb-4 ">
                         <div class="input-group-prepend ">
-                            <span class="input-group-text bg-primary " id="inputGroup-sizing-default " required>Item</span>
+                            <span class="input-group-text bg-primary " id="foundform " required>Item</span>
                         </div>
-                        <input type="text " class="form-control " name='item' aria-label="Default " aria-describedby="inputGroup-sizing-default ">
-                    </div>
-
-                    <div class="input-group mb-4 ">
-                        <div class="input-group-prepend ">
-                            <span class="input-group-text bg-primary " id="inputGroup-sizing-default " required>item Category</span>
-                        </div>
-                        <input type="text " class="form-control " name='category' aria-label="Default " aria-describedby="inputGroup-sizing-default ">
+                        <input type="text " class="form-control " name='item' aria-label="Default " aria-describedby="foundform ">
                     </div>
 
                     <div class="input-group mb-4 ">
                         <div class="input-group-prepend ">
-                            <span class="input-group-text bg-primary " id="inputGroup-sizing-default " required>Location</span>
+                            <span class="input-group-text bg-primary " id="foundform " required>Category</span>
                         </div>
-                        <input type="text " placeholder="If you remember " name='location ' class="form-control " aria-label="Default " aria-describedby="inputGroup-sizing-default ">
+                        <input type="text " class="form-control " name='category' aria-label="Default " aria-describedby="foundform ">
+                    </div>
+
+                    <div class="input-group mb-4 ">
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text bg-primary " id="foundform " required>Location</span>
+                        </div>
+                        <input type="text " placeholder="If you remember " name='location ' class="form-control " aria-label="Default " aria-describedby="foundform ">
                     </div>
                     <div class="input-group mb-4 ">
                         <div class="input-group-prepend ">
-                            <span class="input-group-text bg-primary " id="inputGroup-sizing-default " required>Date</span>
+                            <span class="input-group-text bg-primary " id="foundform " required>Date</span>
                         </div>
-                        <input type="date" name='date' class="form-control " aria-label="Default " aria-describedby="inputGroup-sizing-default ">
+                        <input type="date" name='date' class="form-control " aria-label="Default " aria-describedby="foundform ">
                     </div>
                     <div class="input-group mb-4 ">
                         <div class="input-group-prepend ">
-                            <span class="input-group-text bg-primary " id="inputGroup-sizing-default " required>Time</span>
+                            <span class="input-group-text bg-primary " id="foundform " required>Time</span>
                         </div>
-                        <input type="time " class="form-control " name='time' aria-label="Default " aria-describedby="inputGroup-sizing-default ">
+                        <input type="time " class="form-control " name='time' aria-label="Default " aria-describedby="foundform ">
                     </div>
                     <div class="input-group mb-4 ">
                         <div class="input-group-prepend ">
