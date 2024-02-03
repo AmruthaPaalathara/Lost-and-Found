@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+
+<br>
+<div class="login" style="padding: 40px;">
+    <h2>Login Page</h2><br> {% csrf_token %}
+    <form id="login" method="POST" action="">
+        <label><b>User Name
+            </b>
+        </label>
+        <input type="text" name="username" id="username" placeholder="Username">
+        <br><br>
+        <label><b>Password
+            </b>
+        </label>
+        <input type="Password" name="password" id="password" placeholder="Password">
+        <br><br>
+        <input type="button" name="login" id="log" value="Log In Here">
+        <br><br>
+        <input type="checkbox" id="check">
+        <span>Remember me</span>
+        <br><br> {% if messages %} {% for message in messages %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div> {% endfor %} {% endif %}
+    </form>
+
+</div>
+<br> {% endblock content %}

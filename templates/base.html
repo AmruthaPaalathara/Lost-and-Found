@@ -70,7 +70,8 @@
             </ul>
 
             <div class="signin-buttons" style="justify-content: flex-end;">
-                <a href="{% url 'login' %}"><i class="fas fa-user signin grow ">Log In</i></a>
+                {% if user.is_authenticated %}
+                <a href="{% url 'login' %}"><i class="fas fa-user signin grow ">Logout</i></a> {% else %} <a href="{% url 'login' %}"><i class="fas fa-user signin grow ">Log In</i></a>{% endif %}
                 <a href="{% url 'register' %}"><i class="fas fa-user signin grow ">Register</i></a>
             </div>
 

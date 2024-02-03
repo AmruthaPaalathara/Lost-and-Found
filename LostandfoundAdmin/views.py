@@ -21,17 +21,25 @@ def claimant(request):
         new_claim.save()
     return render(request,'main/claimantform.html')
 
-def login_user(request):
-    if request.method=='POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request,username=username,password=password)
-        if user is not None:
-            login(request,user)
-            return redirect('index')
-        else:
-            messages.success(request,('There was an Error Logging In, Try Again...'))
-            return redirect('login')
-    # else:
-    #     pass
-    #     return render(request,'authentication/login.html')
+# def login_user(request):
+#     if request.method=="POST":
+#         username = request.POST['username']
+#         password = request.POST['password']
+#         user = authenticate(request,username=username,password=password)
+#         if user is not None:
+#             login(request,user)
+#             return redirect('index')
+#         else:
+#             messages.success(request,('There was an Error Logging In, Try Again...'))
+#             return redirect('login')
+#     else:
+#         return render(request,'authentication/login.html',{})
+        
+# def admin_login(request):
+# def logout_user(request):
+#     logout(request)
+#     messages.success(request,('You were Logged Out'))
+#     return redirect('index')
+
+def search_lost(request):
+    return render(request,'main/items.html',{})
