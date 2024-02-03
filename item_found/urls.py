@@ -1,6 +1,6 @@
 from django.urls import path
 from  . import views
-#from .views import found
+from .views import found_dashboard
 
 urlpatterns=[
     path('about',views.aboutus,name='aboutus'),
@@ -14,5 +14,9 @@ urlpatterns=[
     path('login',views.login,name='login'),
     path('register',views.register,name='register'),
     #path('products',views.products,name='product'),
+    path('found_dashboard/', views.found_dashboard, name='found_dashboard'),
 
 ]
+
+
+

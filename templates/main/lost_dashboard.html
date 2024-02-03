@@ -1,0 +1,10 @@
+<!-- item_lost/dashboard.html -->
+{% extends 'base.html' %}  {% load static %} {% block content %}
+
+    <h2>Lost Items Dashboard</h2>
+    <ul>
+        {% for item in lost_items %}
+            <li>{{ item.name }} - Reported by {{ item.reported_by.username }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
