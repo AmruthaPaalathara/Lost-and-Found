@@ -43,3 +43,8 @@ def claimant(request):
 
 def search_lost(request):
     return render(request,'main/items.html',{})
+
+# def admin_login(request):
+    # try:
+        # if request.user.is_authenticate:
+            # return redirect('/dashboard')

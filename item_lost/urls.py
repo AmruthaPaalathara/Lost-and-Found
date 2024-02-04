@@ -1,13 +1,13 @@
 from django.urls import path
 from item_lost import views
-from .views import lost_dashboard
+from .views import *
 
 urlpatterns=[
-    path('form',views.lostForm,name="lostForm"),
-    #path('lost',views.item_lost,name='lost'),
-    #path('',views.home,name="index"),
+    path("form",lostForm,name="lostForm"),
+    # path('login',views.login,name='login'),
+    # path('logout',views.logout,name="logout"),
     #path('log_form',views.login_form,name="login_form"),
-    path('dashboard', views.lost_dashboard, name ='dashboard'),
+    path('dashboard', lost_dashboard, name ='dashboard'),
     
 
 ]

@@ -21,16 +21,15 @@ from lostandfound import settings
 
 from item_found.views import *
 from item_lost.views import *
-from LostandfoundAdmin import *
+from LostandfoundAdmin.views import *
 
 
 urlpatterns = [
-    #path('admin/', admin.site.urls),
-    #path('',include('item_found.urls')),
-    path('found/',include('item_found.urls')),
+    path('admin/', admin.site.urls),
+    path('',include('item_found.urls')),
     #path("",login,name="login"),
     path("lost/",include("item_lost.urls")),
-    path('',include('LostandfoundAdmin.urls')),
-    path('dadmin/',include('django.contrib.auth.urls')),
+    path('djadmin',include('LostandfoundAdmin.urls')),
+    # path('dadmin/',include('django.contrib.auth.urls')),
 ]
 urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
