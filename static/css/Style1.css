@@ -73,11 +73,29 @@ section {
     z-index: -1;
 }
 
-.got-lost-heading {
-    color: #030027;
-    font-family: 'Yeseva One', cursive;
-    font-size: 5rem;
-}
+/* Add this CSS to your 'Style1.css' or relevant CSS file */
+
+.got-lost-heading::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    inset: 0 0 0 0;
+    background: hsl(200, 73%, 19%);
+    z-index: -1;
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+  
+  .got-lost-heading:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
 
 section .title {
     font-size: 3rem;

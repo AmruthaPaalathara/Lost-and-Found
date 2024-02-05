@@ -1,20 +1,16 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login, logout
 from .models import lost
-from django.contrib import messages
 
 # Create your views here.
 
 def lostForm(request):
-     if request.method =='POST':
+    if request.method =='POST':
         register=request.POST['register']
-        name=request.POST['name']
-        user=authenticate(request,register_number=register,student_name=name)
-        user.save()
-        
+        # name=
 
-     return render(request,'main/lostForm.html')
+    return render(request,'main/lostForm.html')
 
 def login_form(request):
     if request.method == "POST":
@@ -22,7 +18,6 @@ def login_form(request):
         password = request.POST.get('password')
 
     user = authenticate(request, username=username, password=password)
-    user.save()
     
     return render(request,'Login/login.html')
 
@@ -30,20 +25,6 @@ def lost_dashboard(request):
     lost_items = lost.objects.all()[:5]  # Get the latest 5 lost items
     context = {'lost_items': lost_items}
     return render(request, 'main/lost_dashboard.html', context)
-# def login(request):
-#     if request.method == "POST":
-#         username=request.POST['username']
-#         password=request.POST['password']
 
-#         user = authenticate(username=username, password=password)
-#         if user is not None:
-#             authenticate.login(request,user)
-#             return redirect(request,'main/index.html')
-#         else:
-#             messages.info(request,"Invalid credentials")
-#             return redirect(request,'authentication/login.html')
-def logout(request):
-    authenticate.logout(request)
-    return redirect('main/index.html')              
 
 
