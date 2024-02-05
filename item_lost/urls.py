@@ -7,7 +7,7 @@ urlpatterns=[
     # path('login',views.login,name='login'),
     # path('logout',views.logout,name="logout"),
     #path('log_form',views.login_form,name="login_form"),
-    path('dashboard', lost_dashboard, name ='dashboard'),
+    path('lost_dashboard', views.lost_dashboard, name ='lost_dashboard'),
     
 
 ]
