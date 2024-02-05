@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head_title %}Report Lost Item{% endblock %}
+{% block content %}
+
+<section>
+    <div class="container" id="main-container">
+        <div class="image">
+            <img src="{% static 'images/lost-2.jpg' %}" alt="">
+        </div>
+
+        <div class="container p-5 mt-5" id="form-container">
+            <h1 class="text-center">Lost Something?</h1>
+            <h3 class="text-center">Help us to help you out!</h3>
+            <form method="post" action="{% url 'report_lost_item' %}" enctype="multipart/form-data" class="mt-4">
+                {% csrf_token %}
+                {{ form.as_p }}
+              
+                <div class="submit-button text-center">
+                    <button type="submit" class="btn btn-outline-primary ">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
