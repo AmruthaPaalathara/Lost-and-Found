@@ -31,8 +31,8 @@ Follow these steps to run the Lost and Found Web Application locally:
     python manage.py runserver
 
 3. **Make migrations:**
-   python manage.py migrate
    python manage.py makemigrations
+   python manage.py migrate
 
 
 ## Requirements:
