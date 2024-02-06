@@ -116,3 +116,6 @@ def found_item(request):
 def contactus(request):
     return render(request,"lost_and_found\contactus.html")
 
+# def dashboard(request):
+#     return render(request, "lost_and_found/admin/dashboard.html")
+

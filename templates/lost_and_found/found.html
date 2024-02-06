@@ -1,7 +1,57 @@
-{% extends 'base.html' %} {% load static %} {% block head_title %}
-<h2>Report_Found Item</h2>{% endblock %} {% block content %}
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %} {{ form.as_p }}
-    <button type="submit">Submit</button>
-</form>
+{% extends 'base.html' %} {% load static %} {% block head_title %}Report_Found Item{% endblock %} {% block content %}
+
+<link rel="stylesheet" href="{% static 'foundForm.css' %}">
+<section>
+    <div class="container" id="main-container">
+        <div class="image">
+            <img src="{% static 'images/found.jpg'%}" alt="">
+        </div>
+
+        <div class="container p-5 mt-5" id="form-container">
+
+            <h1 class="text-center">Glad To See You Here <i class="far fa-smile-beam"></i></h1>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Lost Items*</span>
+                    </div>
+                    {{ form.lost_item }}
+                </div>
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Location*</span>
+                    </div>
+                    {{ form.found_location }}
+                </div>
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Date*</span>
+                    </div>
+                    {{ form.found_date }}
+                </div>
+
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Description</span>
+                    </div>
+                    {{ form.description }}
+                </div>
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Found Item Image*</span>
+                    </div>
+                    {{ form.item_image }}
+                </div>
+
+
+
+
+                <div class="submit-button text-center">
+                    <button type="submit" class="btn btn-outline-primary ">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
 {% endblock content %}
