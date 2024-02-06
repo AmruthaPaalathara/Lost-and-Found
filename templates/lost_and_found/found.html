@@ -1,10 +1,7 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block head_title %}Report_Found Item{% endblock %}
-{% block content %}
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-    </form>
+{% extends 'base.html' %} {% load static %} {% block head_title %}
+<h2>Report_Found Item</h2>{% endblock %} {% block content %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
 {% endblock content %}

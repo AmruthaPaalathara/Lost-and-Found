@@ -223,6 +223,7 @@ h5 {
 .section-5 .container {
     max-width: 80%;
 }
+
 .testimonial-three-col p {
     text-align: justify;
 }
@@ -283,57 +284,57 @@ small span:hover {
     color: white;
 }
 
-#footer{
+#footer {
     background-color: #383E56;
-    color:white;
+    color: white;
     padding-left: 20%;
     justify-content: center;
     align-items: center;
 }
 
-.BackToTop{
-  margin-top: 30px;
-  margin-left: 46%;
-  color: rgba(255, 255, 255, 0.582);
+.BackToTop {
+    margin-top: 30px;
+    margin-left: 46%;
+    color: rgba(255, 255, 255, 0.582);
 }
 
-.back{
+.back {
     color: rgba(255, 255, 255, 0.582);
     margin-left: 7%;
 }
 
-.back:hover{
+.back:hover {
     color: #fff;
 }
 
-.favicon{
+.favicon {
     margin-left: 40%;
 }
 
-.social-media{
+.social-media {
     color: rgba(255, 255, 255, 0.582);
     margin: 20px 20px;
 }
 
-.social-media:hover{
+.social-media:hover {
     color: #fff;
 }
 
+
 /* Responsiveness */
-@media (max-width:600px){
-    .container{
+
+@media (max-width:600px) {
+    .container {
         flex-direction: column;
     }
-    .section-3{
+    .section-3 {
         display: flex;
         flex-direction: column;
     }
-    .d-flex{
+    .d-flex {
         flex-wrap: wrap;
     }
-    #page-footer{
+    #page-footer {
         overflow: hidden;
     }
 }
-
-

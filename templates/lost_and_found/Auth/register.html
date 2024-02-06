@@ -1,16 +1,12 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block head_title %}Lost and Found{% endblock %}
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block head_title %}Lost and Found{% endblock %} {% block content %}
 
 
 <form class="mt-4" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <div class="form-check mb-3">
+    {% csrf_token %} {{ form.as_p }}
+    <!-- <div class="form-check mb-3">
         <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
         <label class="form-check-label" for="exampleCheck1"><a href="#">Agree terms and conditions</a></label>
-    </div>
+    </div> -->
     <div class="submit-button text-center">
         <button type="submit" class="btn btn-outline-primary ">Submit</button>
     </div>
