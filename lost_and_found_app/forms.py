@@ -57,7 +57,7 @@ class FoundItemForm(forms.ModelForm):
             "item_image",
         ]
         widgets = {
-            "lost_item": forms.Select(attrs={"class": "form-control"}),
+            "lost_item": forms.Select(attrs={"class": "form-control", "required" : False}),
             "found_location": forms.TextInput(attrs={"class": "form-control"}),
             "found_date": forms.DateInput(attrs={"type": "date", "class": "form-control"}),
             "description": forms.Textarea(attrs={"class": "form-control"}),
