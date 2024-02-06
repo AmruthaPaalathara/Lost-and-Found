@@ -34,9 +34,16 @@ class LostItemForm(forms.ModelForm):
             "reward",
         ]
         widgets = {
-            "date": forms.DateInput(attrs={"type": "date"}),
+            "name": forms.TextInput(attrs={"class": "form-control"}),
+            "email": forms.EmailInput(attrs={"class": "form-control"}),
+            "item_name": forms.TextInput(attrs={"class": "form-control"}),
             "item_image": forms.ClearableFileInput(attrs={"class": "form-control"}),
+            "location": forms.TextInput(attrs={"class": "form-control"}),
+            "date": forms.DateInput(attrs={"type": "date", "class": "form-control"}),
+            "description": forms.Textarea(attrs={"class": "form-control"}),
+            "reward": forms.NumberInput(attrs={"class": "form-control"}),
         }
+
 
 
 class FoundItemForm(forms.ModelForm):
@@ -50,6 +57,10 @@ class FoundItemForm(forms.ModelForm):
             "item_image",
         ]
         widgets = {
-            "found_date": forms.DateInput(attrs={"type": "date"}),
+            "lost_item": forms.Select(attrs={"class": "form-control"}),
+            "found_location": forms.TextInput(attrs={"class": "form-control"}),
+            "found_date": forms.DateInput(attrs={"type": "date", "class": "form-control"}),
+            "description": forms.Textarea(attrs={"class": "form-control"}),
             "item_image": forms.ClearableFileInput(attrs={"class": "form-control"}),
         }
+

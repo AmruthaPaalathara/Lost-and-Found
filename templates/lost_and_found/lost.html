@@ -3,6 +3,8 @@
 {% block head_title %}Report Lost Item{% endblock %}
 {% block content %}
 
+<link rel="stylesheet" href="{% static 'lostForm.css' %}">
+
 <section>
     <div class="container" id="main-container">
         <div class="image">
@@ -10,12 +12,61 @@
         </div>
 
         <div class="container p-5 mt-5" id="form-container">
+
             <h1 class="text-center">Lost Something?</h1>
             <h3 class="text-center">Help us to help you out!</h3>
-            <form method="post" action="{% url 'report_lost_item' %}" enctype="multipart/form-data" class="mt-4">
+            <form class="mt-4" method="post" action="{% url 'report_lost_item' %}" enctype="multipart/form-data">
                 {% csrf_token %}
-                {{ form.as_p }}
-              
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Name*</span>
+                    </div>
+                    {{  form.name  }}
+                </div>
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Email*</span>
+                    </div>
+                    {{ form.email }}
+                </div>
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Item*</span>
+                    </div>
+                    {{  form.item_name }}
+                </div>
+
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Location</span>
+                    </div>
+                    {{ form.location }}
+                </div>
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Date*</span>
+                    </div>
+                    {{ form.date }}
+                </div>
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary">Item Description*</span>
+                    </div>
+                    {{ form.description }}
+                </div>
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Lost Item Image*</span>
+                    </div>
+                      {{ form.item_image }}
+                </div>
+                <div class="input-group mb-5">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Reward</span>
+                    </div>
+                    {{ form.reward }}
+                </div>
+
                 <div class="submit-button text-center">
                     <button type="submit" class="btn btn-outline-primary ">Submit</button>
                 </div>
