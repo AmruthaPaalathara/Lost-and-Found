@@ -24,8 +24,8 @@ Follow these steps to run the Lost and Found Web Application locally:
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/your-username/lost-and-found-webapp.git
-   cd lost-and-found-webapp
+   git clone https://github.com/AmruthaPaalathara/Lost-and-Found.git
+   cd lost-and-found
 
 2. **Run the Development Server:**
     python manage.py runserver
