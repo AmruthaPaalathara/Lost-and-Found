@@ -43,3 +43,6 @@ def claimant(request):
 
 def search_lost(request):
     return render(request,'main/items.html',{})
+
+def dashboard(request):
+    return render(request,'admin/dashboard.html')

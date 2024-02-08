@@ -5,6 +5,6 @@ from .views import *
 urlpatterns = [
     #path('login',login_form,name='padminlogin'),
     path('claim',claimant,name='claim'),
-    # path('',login_user,name='login'),
+    path('dashboard',dashboard,name='dash'),
     # path('loggout',logout_user,name='login'),
 ]
