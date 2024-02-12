@@ -1,0 +1,61 @@
+{% extends 'lost_and_found/Auth/layouts/base.html' %} {% block content %} {% load static %}
+
+<div class="my-3 mx-3">
+    <h1>Admin Dashboard</h1>
+    <div class="d-flex">
+        <!--card line chart start-->
+        <div class="col-3 card mx-3">
+            <div class="card-body">
+                <h5 class="card-title text-primary">item reported</h5>
+                <div>
+                    <canvas id="item-reported"></canvas>
+                </div>
+                <h1 class="card-text text-end">25</h1>
+            </div>
+        </div>
+        <div class="col-3 card mx-3">
+            <div class="card-body">
+                <h5 class="card-title text-primary">Total Lossed</h5>
+                <div>
+                    <canvas id="total-loss"></canvas>
+                </div>
+                <h1 class="card-text text-end">25</h1>
+            </div>
+        </div>
+        <div class="col-3 card mx-3">
+            <div class="card-body">
+                <h5 class="card-title text-primary">Total found</h5>
+                <div>
+                    <canvas id="total-found"></canvas>
+                </div>
+                <h1 class="card-text text-end text-success">25</h1>
+            </div>
+        </div>
+    </div>
+    <!--card line chart ends here-->
+    <!--big line chart start here-->
+    <div class="mx-3 my-5">
+        <div class="card-body">
+            <h5 class="card-title text-primary">total</h5>
+            <div class="bg-secondary bg-opacity-25 px-5 py-3 rounded">
+                <canvas id="total"></canvas>
+            </div>
+        </div>
+    </div>
+    <!--big line chart ends here-->
+    <!--pie chart starts-->
+    <div class="d-flex">
+        <div>
+            <div class="card mx-3 p-3">
+                <h6 class="text-centre">Items</h6>
+                <canvas id="summary"></canvas>
+            </div>
+        </div>
+    </div>
+    <!--data tables-->
+    <div class="col-lg-8">
+        <table id=" datatable "></table>
+    </div>
+</div>
+{% endblock content %} {% block scripts %}
+<script type="module " src="{% static 'js/index.js' %} "></script>{% endblock scripts %}
