@@ -34,4 +34,13 @@ urlpatterns = [
     path("lost-item/", lost_item, name="lost_item"),
     path("found-item/", found_item, name="found_item"),
     path("contactus/", contactus, name="contactus"),
+    path('admindashboard',admin_dashboard,name='admindashboard'),
+    path('datatables',datatables,name='datatables'),
+    path('admindashboard',admin_dashboard,name='dashboard'),
+    path('datatables',datatables,name='datatables'),
+    # path("lostitems",lostitems,name="lostitems"),
+    # path("founditems",founditems,name="founditems"),
+    path("lostcount",lost_item_users,name="lostusercount"),
+    path("foundcount",found_item_users,name="foundusercount"),
+   
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

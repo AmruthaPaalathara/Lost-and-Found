@@ -116,6 +116,53 @@ def found_item(request):
 def contactus(request):
     return render(request,"lost_and_found\contactus.html")
 
-# def dashboard(request):
-#     return render(request, "lost_and_found/admin/dashboard.html")
 
+def admin_dashboard(request):
+    return render(request,'lost_and_found/Auth/admindashboard.html')
+
+def datatables(request):
+    return render(request,'lost_and_found/Auth/datatables.html')
+
+def lost_item_users(request):
+    categories = LostItemCount.objects.values_list('category', flat=True).distinct()
+    data = {}
+    for category in categories:
+        users = LostItemCount.objects.filter(category=category).values_list('user', flat=True).distinct()
+        data[category] = list(users)
+    return render(request, 'lost_and_found/Auth/lostcount.html', {'data': data})
+
+
+# def lostitems(request):
+#     queryset = LostItemCount.objects.all()
+#     data={
+#         "labels":[],
+#         "data":[],
+        
+
+#     }
+#     for item in queryset:
+#         data["labels"].append(item.user)
+#         data["data"].append(count_users_for_category(item.category))
+#     return JsonResponse(data)
+
+def found_item_users(request):
+    categories = FoundItemCount.objects.values_list('category', flat=True).distinct()
+    data = {}
+    for category in categories:
+        users = FoundItemCount.objects.filter(category=category).values_list('user', flat=True).distinct()
+        data[category] = list(users)
+    return render(request, 'lost_and_found/Auth/foundcount.html', {'data': data})
+
+
+# def founditems(request):
+#     queryset = FoundItemCount.objects.all()
+#     data={
+#         "labels":[],
+#         "data":[],
+        
+
+#     }
+#     for item in queryset:
+#         data["labels"].append(item.user)
+#         data["data"].append(count_users_for_category(item.category))
+#     return JsonResponse(data)

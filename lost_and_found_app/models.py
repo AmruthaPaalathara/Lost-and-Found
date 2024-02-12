@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 
 User = get_user_model()
 
@@ -73,6 +74,21 @@ class LostItem(models.Model):
         return self.item_name
 
 
+
+class LostItem(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    item_name = models.CharField(max_length=100)
+    location = models.CharField(max_length=100, blank=True)
+    date = models.DateField()
+    description = models.TextField()
+    reward = models.CharField(max_length=100, blank=True)
+    item_image = models.ImageField(upload_to="lost_item_images/", blank=True, null=True)
+
+    def __str__(self):
+        return self.item_name
+
+
 class FoundItem(models.Model):
     finder = models.ForeignKey(User, on_delete=models.CASCADE)
     lost_item = models.ForeignKey("LostItem", on_delete=models.CASCADE)
@@ -85,3 +101,17 @@ class FoundItem(models.Model):
 
     def __str__(self):
         return f"Found: {self.lost_item.item_name} by {self.finder.email}"
+
+
+class LostItemCount(models.Model):
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    category = models.CharField(max_length=50)
+    count=models.IntegerField(default=0)
+
+    def __str__(self):
+        return f"{self.user} ({self.category}):{self.count}"
+
+class FoundItemCount(models.Model):
+    user=models.ForeignKey(User,on_delete=models.CASCADE)
+    category=models.CharField(max_length=50)
+    count=models.IntegerField(default=0)
