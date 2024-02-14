@@ -3,7 +3,8 @@ from .forms import UserRegistrationForm, LostItemForm, FoundItemForm
 from django.contrib.auth import authenticate, login, get_user_model, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import LostItem, FoundItem
+from django.http import JsonResponse
+from .models import LostItem, FoundItem, LostItemCount, FoundItemCount
 
 
 def index(request):
@@ -103,16 +104,6 @@ def found_success(request):
     return render(request, "lost_and_found/found_success.html")
 
 
-def lost_item(request):
-    lost_items = LostItem.objects.all()
-    return render(request, "lost_and_found/lost_item.html", {"lost_items": lost_items})
-
-
-def found_item(request):
-    found_items = FoundItem.objects.all()
-    return render(
-        request, "lost_and_found/found_item.html", {"found_items": found_items}
-    )
 def contactus(request):
     return render(request,"lost_and_found\contactus.html")
 
@@ -123,6 +114,17 @@ def admin_dashboard(request):
 def datatables(request):
     return render(request,'lost_and_found/Auth/datatables.html')
 
+def lost_item(request):
+    lost_items = LostItem.objects.all()
+    return render(request, "lost_and_found/lost_item.html", {"lost_items": lost_items})
+
+
+def found_item(request):
+    found_items = FoundItem.objects.all()
+    return render(
+        request, "lost_and_found/found_item.html", {"found_items": found_items}
+    )
+
 def lost_item_users(request):
     categories = LostItemCount.objects.values_list('category', flat=True).distinct()
     data = {}
@@ -132,18 +134,18 @@ def lost_item_users(request):
     return render(request, 'lost_and_found/Auth/lostcount.html', {'data': data})
 
 
-# def lostitems(request):
-#     queryset = LostItemCount.objects.all()
-#     data={
-#         "labels":[],
-#         "data":[],
+def lostitems(request):
+    queryset = LostItemCount.objects.all()
+    data={
+        "labels":[],
+        "data":[],
         
 
-#     }
-#     for item in queryset:
-#         data["labels"].append(item.user)
-#         data["data"].append(count_users_for_category(item.category))
-#     return JsonResponse(data)
+    }
+    for item in queryset:
+        data["labels"].append(item.user)
+        data["data"].append(lost_item(item.category))
+    return JsonResponse(data)
 
 def found_item_users(request):
     categories = FoundItemCount.objects.values_list('category', flat=True).distinct()
@@ -154,15 +156,15 @@ def found_item_users(request):
     return render(request, 'lost_and_found/Auth/foundcount.html', {'data': data})
 
 
-# def founditems(request):
-#     queryset = FoundItemCount.objects.all()
-#     data={
-#         "labels":[],
-#         "data":[],
+def founditems(request):
+    queryset = FoundItemCount.objects.all()
+    data={
+        "labels":[],
+        "data":[],
         
 
-#     }
-#     for item in queryset:
-#         data["labels"].append(item.user)
-#         data["data"].append(count_users_for_category(item.category))
-#     return JsonResponse(data)
+    }
+    for item in queryset:
+        data["labels"].append(item.user)
+        data["data"].append(found_item(item.category))
+    return JsonResponse(data)

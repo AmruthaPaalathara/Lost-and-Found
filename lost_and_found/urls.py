@@ -38,8 +38,8 @@ urlpatterns = [
     path('datatables',datatables,name='datatables'),
     path('admindashboard',admin_dashboard,name='dashboard'),
     path('datatables',datatables,name='datatables'),
-    # path("lostitems",lostitems,name="lostitems"),
-    # path("founditems",founditems,name="founditems"),
+    path("lostitems",lostitems,name="lostitems"),
+    path("founditems",founditems,name="founditems"),
     path("lostcount",lost_item_users,name="lostusercount"),
     path("foundcount",found_item_users,name="foundusercount"),
    

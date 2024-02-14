@@ -1,5 +1,18 @@
-{% extends 'lost_and_found/Auth/layouts/base.html' %} {% block content %} {% load static %}
-
+{% extends 'lost_and_found/Auth/layouts/base.html' %}{% load static %} {% block stylesheets %}
+<!--chart js-->
+<script src="https://cdnjs.com/libraries/Chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"></script>
+<!--simple datatables-->
+<link rel="stylesheet" type="text/css ">
+<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest " type="text/javascript ">
+</script>
+<!--bootsrap-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css " rel="stylesheet " integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN " crossorigin="anonymous ">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL " crossorigin="anonymous "></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js " integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r " crossorigin="anonymous "></script>
+{% endblock stylesheets %} {% block content %}
 <div class="my-3 mx-3">
     <h1>Admin Dashboard</h1>
     <div class="d-flex">
@@ -36,7 +49,7 @@
     <!--big line chart start here-->
     <div class="mx-3 my-5">
         <div class="card-body">
-            <h5 class="card-title text-primary">total</h5>
+            <h5 class="card-title text-primary">Total</h5>
             <div class="bg-secondary bg-opacity-25 px-5 py-3 rounded">
                 <canvas id="total"></canvas>
             </div>
@@ -47,15 +60,187 @@
     <div class="d-flex">
         <div>
             <div class="card mx-3 p-3">
-                <h6 class="text-centre">Items</h6>
+                <h6 class="text-center">Items</h6>
                 <canvas id="summary"></canvas>
             </div>
         </div>
     </div>
     <!--data tables-->
     <div class="col-lg-8">
-        <table id=" datatable "></table>
+        <table id="datatable"></table>
     </div>
 </div>
-{% endblock content %} {% block scripts %}
-<script type="module " src="{% static 'js/index.js' %} "></script>{% endblock scripts %}
+<script>
+    // initializingdata table//
+
+    const dataTable = new simpleDatatables.DataTable("#datatable", {
+        searchable: true,
+        fixedHeight: true,
+        data: [],
+
+    });
+    dataTable.rows.add([
+        ["23122001", "watch", "15-11-2023"],
+        ["23122001", "watch", "15-11-2023"],
+        ["23122001", "watch", "15-11-2023"],
+    ]);
+
+    fetch("/datatable")
+        .then(res => res.json())
+        .then(data => {
+            dataTable.rows.add(data.data)
+
+        });
+
+    fetch("/foundcount")
+        .then(res => res.json())
+        .then(data => {
+            for (const category in data) {
+                if (data.hasOwnProperty(category)) {
+                    $('#datatable').append('<tr><td>' + category + '</td><td>' + data[category] + '</td></tr>');
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+
+
+
+
+
+    const itemReportedChart = new Chart(document.getElementById("total-found"), {
+        type: 'line',
+        data: {
+            labels: [],
+            datasets: [{
+                label: '#Total found',
+                data: [],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+    const itemlostChart = new Chart(totalossChart, {
+        type: 'line',
+        data: {
+            labels: ['Electronics', 'Stationary'],
+            datasets: [{
+                label: '#total votes',
+                data: [500, 2502],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+
+    });
+    const foundChart = new Chart(totalfoundChart, {
+        type: 'line',
+        data: {
+            labels: ['Electronics', 'Stationary'],
+            datasets: [{
+                label: '#total votes',
+                data: [500, 2502],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    const total = new Chart(totalitems, {
+        type: 'line',
+        data: {
+            labels: ['Electronics', 'Stationary'],
+            datasets: [{
+                label: '#total votes',
+                data: [500, 2502],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    const overviewChart = new Chart(overview, {
+        type: 'pie',
+        data: {
+            labels: [
+                'Red',
+                'Blue',
+                'Yellow'
+            ],
+            datasets: [{
+                label: 'My First Dataset',
+                data: [300, 50, 100],
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)'
+                ]
+            }]
+
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+
+    })
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('/lostcount')
+            .then(response => response.json())
+            .then(data => {
+                const userList = document.getElementById('user-list');
+
+                for (const category in data) {
+                    if (data.hasOwnProperty(category)) {
+                        const users = data[category];
+                        const categoryHeader = document.createElement('h2');
+                        categoryHeader.textContent = category;
+                        userList.appendChild(categoryHeader);
+
+                        const userUl = document.createElement('ul');
+                        users.forEach(user => {
+                            const userLi = document.createElement('li');
+                            userLi.textContent = user;
+                            userUl.appendChild(userLi);
+                        });
+                        userList.appendChild(userUl);
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    });
+</script>
+{% endblock content %}
